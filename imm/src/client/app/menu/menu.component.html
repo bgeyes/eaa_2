@@ -9,9 +9,15 @@
       <h1>Contact Manager</h1>
     </div>
     <div class="item" *ngIf="auth.isLoggedIn()">
-      <button [routerLink]="['/new']" class="ui basic button">
+      <button [routerLink]="['/new-contact']" class="ui basic button">
         <i class="add user icon" aria-hidden="true"></i>
         Add Contact
+      </button>
+    </div>
+    <div class="item" *ngIf="auth.isLoggedIn()">
+      <button [routerLink]="['/new-review']" class="ui basic button">
+        <i class="add user icon" aria-hidden="true"></i>
+        Add Review
       </button>
     </div>
     <div class="right menu" *ngIf="auth.isLoggedIn()">

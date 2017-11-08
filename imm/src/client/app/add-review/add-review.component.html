@@ -1,0 +1,73 @@
+<div class="add-form-container">
+  <div class="ui icon message" *ngIf="newReview">
+    <i class="notched check green icon"></i>
+    <i class="close icon" (click)="newReview = null"></i>
+    <div class="content">
+      <div class="header">
+        New review added!
+      </div>
+      <p>Model: {{newReview.make}} + {{newReview.model}}</p>
+    </div>
+  </div>
+  <form class="ui form" #contactForm="ngForm" (submit)="onSubmit(contactForm)" [class.loading]="loading">
+    <div class="fields">
+      <div class="eight wide field">
+        <label>Make</label>
+        <input type="text" placeholder="Make" name="make" ngModel>
+      </div>
+      <div class="eight wide field">
+        <label>Model</label>
+        <input type="text" placeholder="Model" name="model" ngModel>
+      </div>
+    </div>
+    <div class="six wide field">
+      <label>Version</label>
+      <input type="text" placeholder="Version" name="version" ngModel>
+    </div>
+    <div class="two wide field">
+      <label>Version</label>
+      <input type="text" placeholder="Year of registration" name="yor" ngModel>
+    </div>
+    <div class="eight wide field">
+      <label>Average Mileage</label>
+      <input type="text" placeholder="Average Mileage" name="avgMlg" ngModel>
+    </div>
+    <div class="eight wide field">
+      <label>Typical MPG</label>
+      <input type="text" placeholder="Typical MPG" name="typicalMpg" ngModel>
+    </div>
+    <div class="eight wide field">
+      <label>Owning since</label>
+      <input type="text" placeholder="Owning since" name="ownershipPeriod" ngModel>
+    </div>
+    <div class="eight wide field">
+      <label>State at purchase</label>
+      <input type="text" placeholder="State at purchase" name="stateAtPurchase" ngModel>
+    </div>
+    <div class="eight wide field">
+      <label>Usage</label>
+      <input type="text" placeholder="Usage" name="usage" ngModel>
+    </div>
+    <div class="eight wide field">
+      <label>Review</label>
+      <textarea name="review" cols="30" rows="10"></textarea>
+    </div>
+    <div class="eight wide field">
+      <label>Recommend</label>
+      <input type="text" placeholder="Recommend" name="recommend" ngModel>
+    </div>
+    <div class="eight wide field">
+      <label>Rating</label>
+      <input type="text" placeholder="Rating" name="rating" ngModel>
+    </div>
+    <div class="eight wide field">
+      <label>Common Problems</label>
+      <input type="text" placeholder="common problems" name="commonProblems" ngModel>
+    </div>
+    <div class="eight wide field">
+      <label>Location</label>
+      <input type="text" placeholder="location" name="location" ngModel>
+    </div>
+    <button type="submit" class="ui submit large grey button right floated">Submit</button>
+  </form>
+</div>

@@ -13,6 +13,7 @@ import { ApiService } from './shared/api.service';
 import { AuthService } from './shared/auth.service';
 import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './auth.guard';
+import { AddReviewComponent } from './add-review/add-review.component';
 
 @NgModule({
   declarations: [
@@ -21,8 +22,9 @@ import { AuthGuard } from './auth.guard';
     ContactListComponent,
     ContactComponent,
     AddContactComponent,
-    LoginComponent
-  ],
+    LoginComponent,
+    AddReviewComponent
+],
   imports: [
     BrowserModule,
     FormsModule,
