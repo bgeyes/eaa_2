@@ -67,6 +67,16 @@ function apiRouter(database) {
       return res.status(201).json(newRecord);
     });
   });
+
+  router.get('/cars', (req, res) => {
+    
+      const reviewsCollection = database.collection('cars');
+    
+      reviewsCollection.find({}).toArray((err, docs) => {
+      return res.json(docs)
+     });
+    
+  });
     
   
 

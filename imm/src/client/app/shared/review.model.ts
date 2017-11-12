@@ -11,7 +11,7 @@ export interface Review {
       usage: string;
       review: string;
       recommend: string;
-      rating: number;
+      rating: any;
       commonProblems: string;
       location: string;
     }

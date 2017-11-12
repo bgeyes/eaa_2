@@ -14,6 +14,7 @@ import { AuthService } from './shared/auth.service';
 import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './auth.guard';
 import { AddReviewComponent } from './add-review/add-review.component';
+import { StarRatingModule } from 'angular-star-rating';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { AddReviewComponent } from './add-review/add-review.component';
     BrowserModule,
     FormsModule,
     HttpModule,
-    AppRoutingModule
+    AppRoutingModule,
+    StarRatingModule.forRoot()
   ],
   providers: [ApiService, AuthService, AuthGuard],
   bootstrap: [AppComponent]

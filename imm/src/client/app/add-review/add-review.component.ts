@@ -1,7 +1,9 @@
 import { NgForm } from '@angular/forms';
 import { ApiService } from './../shared/api.service';
 import { Review } from './../shared/review.model';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Car } from '../shared/car.model';
+import { OnClickEvent, OnRatingChangeEven, OnHoverRatingChangeEvent } from 'angular-star-rating';
 
 @Component({
   selector: 'app-add-review',
@@ -12,11 +14,52 @@ export class AddReviewComponent implements OnInit {
 
   loading: Boolean = false;
   newReview: Review;
+  cars: Car[];
+  models: String[];
+  rating: any;
+  getCurrentUser: any;
+
+  //star rating 
+  onClickResult:OnClickEvent;
+  onHoverRatingChangeResult:OnHoverRatingChangeEvent;
+  onRatingChangeResult:OnRatingChangeEven;
 
   constructor(public api: ApiService) { }
 
   ngOnInit() {
-  }
+    this.api.get('cars')
+      .subscribe(data => this.cars = data);
+    this.getCurrentUser = this.api.get('authenticate/profile.json');
+    console.log(this.getCurrentUser);
+  };
+
+  //star rating
+  onClick = ($event:OnClickEvent) => {
+    console.log('onClick $event: ', $event);
+    this.onClickResult = $event;
+  };
+
+  /* onRatingChange = ($event:OnRatingChangeEven) => {
+    console.log('onRatingUpdated $event: ', $event);
+    this.onRatingChangeResult = $event;
+  };
+
+  onHoverRatingChange = ($event:OnHoverRatingChangeEvent) => {
+    console.log('onHoverRatingChange $event: ', $event);
+    this.onHoverRatingChangeResult = $event;
+  }; */
+
+  onChange(make) {
+    if (make == '0') {
+      return this.models = []
+    }
+    var i;
+    for (i in this.cars) {
+      if (this.cars[i].make == make){
+        this.models = this.cars[i].model;
+      };
+    };
+  };
 
   onSubmit(form: NgForm) {
     this.loading = true;
@@ -36,7 +79,7 @@ export class AddReviewComponent implements OnInit {
       usage: formValues.usage,
       review: formValues.review,
       recommend: formValues.recommend,
-      rating: formValues.rating,
+      rating: this.onClickResult.rating,
       commonProblems: formValues.commonProblems,
       location: formValues.location
     };
@@ -47,6 +90,6 @@ export class AddReviewComponent implements OnInit {
         this.loading = false;
         this.newReview = data;
       });
-  }
+  };
 
 }

@@ -89,6 +89,10 @@ MIT
 MIT
 MIT
 
+angular-star-rating@3.0.8
+MIT
+MIT
+
 @angular/forms@4.4.6
 MIT
 MIT
