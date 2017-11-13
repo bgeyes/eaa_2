@@ -31,9 +31,11 @@ export class LoginComponent implements OnInit {
 
     this.api.post('authenticate', payload)
       .subscribe(data => {
-        this.auth.setToken(data.token);
+        this.auth.setToken(data.token, data.user);
         this.router.navigate(['/contacts']);
-      });
+    });
+    
+    
   }
 
 }

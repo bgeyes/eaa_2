@@ -1,3 +1,4 @@
+import { AuthService } from './../shared/auth.service';
 import { NgForm } from '@angular/forms';
 import { ApiService } from './../shared/api.service';
 import { Review } from './../shared/review.model';
@@ -17,20 +18,20 @@ export class AddReviewComponent implements OnInit {
   cars: Car[];
   models: String[];
   rating: any;
-  getCurrentUser: any;
+  currentUser: string;
 
   //star rating 
   onClickResult:OnClickEvent;
   onHoverRatingChangeResult:OnHoverRatingChangeEvent;
   onRatingChangeResult:OnRatingChangeEven;
 
-  constructor(public api: ApiService) { }
+  constructor(public api: ApiService, public auth: AuthService) { }
 
   ngOnInit() {
     this.api.get('cars')
       .subscribe(data => this.cars = data);
-    this.getCurrentUser = this.api.get('authenticate/profile.json');
-    console.log(this.getCurrentUser);
+    this.currentUser = this.auth.getUser();
+    console.log(this.currentUser);
   };
 
   //star rating
@@ -67,7 +68,7 @@ export class AddReviewComponent implements OnInit {
     const formValues = Object.assign({}, form.value);
 
     const review: Review = {
-      name: formValues.name,
+      name: this.currentUser,
       make:  formValues.make,
       model: formValues.model,
       version: formValues.version,
@@ -83,7 +84,7 @@ export class AddReviewComponent implements OnInit {
       commonProblems: formValues.commonProblems,
       location: formValues.location
     };
-
+    
     this.api.post('reviews', review)
       .subscribe(data => {
         form.reset();

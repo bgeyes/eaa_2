@@ -104,7 +104,8 @@ function apiRouter(database) {
 
         return res.json({
           message: 'successfuly authenticated',
-          token: token
+          token: token,
+          user: result.username
         });
       });
   });
