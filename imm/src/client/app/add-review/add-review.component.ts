@@ -31,7 +31,6 @@ export class AddReviewComponent implements OnInit {
     this.api.get('cars')
       .subscribe(data => this.cars = data);
     this.currentUser = this.auth.getUser();
-    console.log(this.currentUser);
   };
 
   //star rating
