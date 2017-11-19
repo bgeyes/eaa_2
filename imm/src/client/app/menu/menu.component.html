@@ -1,12 +1,12 @@
 <div class="ui menu header">
   <div class="ui container">
     <div class="item">
-      <a [routerLink]="['/contacts']" aria-label="Contacts">
-        <i class="icon users large blue" aria-hidden="true"></i>
+      <a [routerLink]="['/reviews']" aria-label="Contacts">
+        <i class="car icon large blue" aria-hidden="true"></i>
       </a>
     </div>
     <div class="header item">
-      <h1>Contact Manager</h1>
+      <h1>MasinaMea.info</h1>
     </div>
     <div class="item" *ngIf="auth.isLoggedIn()">
       <button [routerLink]="['/new-contact']" class="ui basic button">

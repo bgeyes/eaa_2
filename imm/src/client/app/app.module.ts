@@ -15,7 +15,6 @@ import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './auth.guard';
 import { AddReviewComponent } from './add-review/add-review.component';
 import { StarRatingModule } from 'angular-star-rating';
-import { ReviewList.component.tsComponent } from './review-list.component.ts/review-list.component.ts.component';
 import { ReviewListComponent } from './review-list/review-list.component';
 import { ReviewComponent } from './review/review.component';
 
@@ -27,8 +26,7 @@ import { ReviewComponent } from './review/review.component';
     ContactComponent,
     AddContactComponent,
     LoginComponent,
-    AddReviewComponent,
-    ReviewList.component.tsComponent,
+    AddReviewComponent,
     ReviewListComponent,
     ReviewComponent
 ],

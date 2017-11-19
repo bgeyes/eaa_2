@@ -19,6 +19,7 @@ export class AddReviewComponent implements OnInit {
   models: String[];
   rating: any;
   currentUser: string;
+  additionalInfo: Boolean = false;
 
   //star rating 
   onClickResult:OnClickEvent;

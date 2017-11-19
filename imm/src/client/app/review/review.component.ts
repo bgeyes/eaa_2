@@ -1,5 +1,5 @@
 import { Review } from './../shared/review.model';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, HostBinding } from '@angular/core';
 
 @Component({
   selector: 'app-review',
@@ -9,6 +9,8 @@ import { Component, OnInit, Input } from '@angular/core';
 export class ReviewComponent implements OnInit {
 
   @Input() review: Review;
+
+  @HostBinding('class') columnClass = 'twelve wide column';
 
   constructor() { }
 

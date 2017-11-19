@@ -153,10 +153,11 @@
       </select> -->
     </div>
     <div class="eight wide field">
-      <label>Locatie*</label>
+      <label>Localitate*</label>
       <input type="text" placeholder="Locatie" required name="location" ngModel>
     </div>
     <button [disabled]="!contactForm.form.valid" type="submit" class="ui submit large green button right floated">Submit</button>
+    <button class="ui large blue button right floated" (click)="additionalInfo = !additionalInfo">Mai multe optiuni</button>
   </form>
 </div>
 

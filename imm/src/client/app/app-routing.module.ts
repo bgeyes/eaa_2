@@ -1,3 +1,4 @@
+import { ReviewListComponent } from './review-list/review-list.component';
 import { AddReviewComponent } from './add-review/add-review.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -11,6 +12,11 @@ const routes: Routes = [
     path: '',
     redirectTo: 'contacts',
     pathMatch: 'full'
+  },
+  {
+    path: 'reviews',
+    component: ReviewListComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'contacts',
