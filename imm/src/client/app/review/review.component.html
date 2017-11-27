@@ -8,12 +8,16 @@
           [size]="'medium'">
         </star-rating-comp>
       </div>
-      <div>Inmatriculare: {{review.yearOfReg}}</div>
-      <div>La cumparare: {{review.stateAtPurchase}}</div>
-      <div>Utilizare: {{review.usage}}</div>
-      <div>Km/an: {{review.avgMlg}}</div>
-      <div>Proprietar de: {{review.ownershipPeriod}}</div>
-      <div>Recomand: {{review.recommend}}</div>
+      <div><strong>Inmatriculare</strong> {{review.yearOfReg}}</div>
+      <div><strong>La cumparare: </strong>{{review.stateAtPurchase}}</div>
+      <div><strong>Traseu:</strong> {{review.usage}}</div>
+      <div><strong>Utilizare:</strong> {{review.avgMlg}}</div>
+      <div><strong>Proprietar de:</strong> {{review.ownershipPeriod}}</div>
+      <div><strong>Recomand:</strong> 
+          <i class="thumbs outline up icon blue" *ngIf="review.recommend == 'Da'"></i>
+          <i class="thumbs outline down icon red" *ngIf="review.recommend == 'Nu'"></i> 
+          {{review.recommend}}
+      </div>
     </div>
     <div class="seven fields">
       <div class="header">{{review.name}} din {{review.location}}</div>

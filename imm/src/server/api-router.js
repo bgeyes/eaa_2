@@ -100,7 +100,7 @@ function apiRouter(database) {
           admin: result.admin
         };
 
-        const token = jwt.sign(payload, process.env.JWT_SECRET, { expiresIn: '4h' });
+        const token = jwt.sign(payload, process.env.JWT_SECRET, { expiresIn: '24h' });
 
         return res.json({
           message: 'successfuly authenticated',
