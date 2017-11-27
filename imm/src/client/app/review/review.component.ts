@@ -10,7 +10,7 @@ export class ReviewComponent implements OnInit {
 
   @Input() review: Review;
 
-  @HostBinding('class') columnClass = 'twelve wide column';
+  @HostBinding('class') columnClass = 'fourteen wide column';
 
   constructor() { }
 
