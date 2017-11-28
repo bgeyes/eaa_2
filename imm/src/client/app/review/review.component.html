@@ -1,6 +1,6 @@
-<div class="ui items">
-  <div class="item">
-    <div class="details five fields">
+<div class="ui two column grid">
+    <div class="two wide column"></div>
+    <div class="details three wide column">
       <div class="rating">
         <star-rating-comp class="stars" [starType]="'svg'" 
           [rating]="review.rating" 
@@ -8,9 +8,10 @@
           [size]="'medium'">
         </star-rating-comp>
       </div>
-      <div><strong>Inmatriculare</strong> {{review.yearOfReg}}</div>
+      <div><strong>Prima inmatriculare:</strong> {{review.yearOfReg}}</div>
+      <div><strong>Versiune:</strong> {{review?.version}}</div>
       <div><strong>La cumparare: </strong>{{review.stateAtPurchase}}</div>
-      <div><strong>Traseu:</strong> {{review.usage}}</div>
+      <div><strong>Uz zilnic:</strong> {{review.usage}}</div>
       <div><strong>Utilizare:</strong> {{review.avgMlg}}</div>
       <div><strong>Proprietar de:</strong> {{review.ownershipPeriod}}</div>
       <div><strong>Recomand:</strong> 
@@ -19,11 +20,12 @@
           {{review.recommend}}
       </div>
     </div>
-    <div class="seven fields">
+    <div class="seven wide column">
       <div class="header">{{review.name}} din {{review.location}}</div>
       <div class="content">
         <div>{{review.review}}</div>
       </div>
+      <div class="probleme"><strong>Probleme comune:</strong>  {{review.commonProblems}}</div>
     </div>
-  </div>
+  
 </div>
