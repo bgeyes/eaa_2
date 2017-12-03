@@ -1,4 +1,5 @@
-<div class="ui container">
+<!-- <app-home (searchFilterEvent)="getFilteredReviews($event)"></app-home> -->
+<div class="ui container" (searchFilterEvent)="getFilteredReviews($event)">
   <div class="ui grid">
     <app-review *ngFor="let review of reviews" [review]="review"></app-review>
   </div>

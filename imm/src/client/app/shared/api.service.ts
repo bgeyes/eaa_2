@@ -14,6 +14,10 @@ export class ApiService {
 
   constructor(private http: Http, private auth: AuthService) { }
 
+  getFiltered(url: string, body: Object) {
+    return this.request(url, RequestMethod.Get, body);
+  }
+
   get(url: string) {
     return this.request(url, RequestMethod.Get);
   }

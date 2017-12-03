@@ -43,10 +43,12 @@ function apiRouter(database) {
   });
 
   router.get('/reviews', (req, res) => {
+
+      const car = req.body;
     
       const reviewsCollection = database.collection('reviews');
     
-      reviewsCollection.find({}).toArray((err, docs) => {
+      reviewsCollection.find({ model: car.model }).toArray((err, docs) => {
       return res.json(docs)
      });
     
@@ -70,9 +72,9 @@ function apiRouter(database) {
 
   router.get('/cars', (req, res) => {
     
-      const reviewsCollection = database.collection('cars');
+      const carsCollection = database.collection('cars');
     
-      reviewsCollection.find({}).toArray((err, docs) => {
+      carsCollection.find({}).toArray((err, docs) => {
       return res.json(docs)
      });
     

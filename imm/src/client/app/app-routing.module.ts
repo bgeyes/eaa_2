@@ -6,17 +6,23 @@ import { ContactListComponent } from './contact-list/contact-list.component';
 import { AddContactComponent } from './add-contact/add-contact.component';
 import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './auth.guard';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'contacts',
+    redirectTo: 'home',
     pathMatch: 'full'
+  },
+  {
+    path: 'home',
+    component: HomeComponent
+    //canActivate: [AuthGuard]
   },
   {
     path: 'reviews',
     component: ReviewListComponent,
-    canActivate: [AuthGuard]
+    //canActivate: [AuthGuard]
   },
   {
     path: 'contacts',

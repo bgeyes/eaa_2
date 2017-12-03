@@ -1,3 +1,4 @@
+import { Car } from './../shared/car.model';
 import { Review } from './../shared/review.model';
 import { ApiService } from './../shared/api.service';
 import { Component, OnInit } from '@angular/core';
@@ -14,7 +15,12 @@ export class ReviewListComponent implements OnInit {
   constructor(public api: ApiService) { }
 
   ngOnInit() {
-    this.api.get('reviews')
+   /*  this.api.get('reviews')
+      .subscribe(data => this.reviews = data);  */
+  }
+
+  getFilteredReviews(car: Car) {
+    this.api.getFiltered('reviews', car)
       .subscribe(data => this.reviews = data);
   }
 
