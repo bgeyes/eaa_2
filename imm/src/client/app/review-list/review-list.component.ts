@@ -11,16 +11,19 @@ import { Component, OnInit } from '@angular/core';
 export class ReviewListComponent implements OnInit {
 
   reviews: Review[];
+  car = "Captiva";
 
   constructor(public api: ApiService) { }
 
   ngOnInit() {
-   /*  this.api.get('reviews')
+    /* this.api.get('reviews')
       .subscribe(data => this.reviews = data);  */
+    this.api.getReview('reviews', this.car)
+      .subscribe(data => this.reviews = data);
   }
 
-  getFilteredReviews(car: Car) {
-    this.api.getFiltered('reviews', car)
+  getFilteredReviews(car) {
+    this.api.getFiltered('reviews', this.car)
       .subscribe(data => this.reviews = data);
   }
 
