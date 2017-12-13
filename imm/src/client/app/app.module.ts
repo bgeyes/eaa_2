@@ -18,6 +18,9 @@ import { StarRatingModule } from 'angular-star-rating';
 import { ReviewListComponent } from './review-list/review-list.component';
 import { ReviewComponent } from './review/review.component';
 import { HomeComponent } from './home/home.component';
+import { HttpClientModule } from '@angular/common/http/src/module';
+import { HttpClient } from '@angular/common/http';
+import { HttpClientXsrfModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -29,17 +32,18 @@ import { HomeComponent } from './home/home.component';
     LoginComponent,
     AddReviewComponent,
     ReviewListComponent,
-    ReviewComponent,
+    ReviewComponent,
     HomeComponent
 ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule,
+    //HttpModule,
+    HttpClientModule,
     AppRoutingModule,
     StarRatingModule.forRoot()
   ],
-  providers: [ApiService, AuthService, AuthGuard],
+  providers: [ApiService, AuthService, AuthGuard, HttpClient],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
