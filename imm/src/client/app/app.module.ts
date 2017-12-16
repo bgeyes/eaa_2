@@ -19,8 +19,7 @@ import { ReviewListComponent } from './review-list/review-list.component';
 import { ReviewComponent } from './review/review.component';
 import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http/src/module';
-import { HttpClient } from '@angular/common/http';
-import { HttpClientXsrfModule } from '@angular/common/http';
+import { HttpClient, HttpClientXsrfModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -39,11 +38,12 @@ import { HttpClientXsrfModule } from '@angular/common/http';
     BrowserModule,
     FormsModule,
     //HttpModule,
-    HttpClientModule,
+    //HttpClientModule,
+    HttpClientXsrfModule,
     AppRoutingModule,
     StarRatingModule.forRoot()
   ],
-  providers: [ApiService, AuthService, AuthGuard, HttpClient],
+  providers: [ApiService, AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
