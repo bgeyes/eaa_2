@@ -20,11 +20,16 @@ export class ReviewListComponent implements OnInit {
   cars: Car[];
   models: String[];
   reviews: Review[];
+<<<<<<< HEAD
   car: Car;
+=======
+  car = "Captiva";
+>>>>>>> master
 
   constructor(public api: ApiService) { }
 
   ngOnInit() {
+<<<<<<< HEAD
     this.api.get('cars')
       .subscribe(data => this.cars = data);
     /* this.api.get('reviews')
@@ -44,6 +49,17 @@ export class ReviewListComponent implements OnInit {
         form.reset();
         this.showSearch = false;
         this.reviews = data});
+=======
+    /* this.api.get('reviews')
+      .subscribe(data => this.reviews = data);  */
+    this.api.getReview('reviews', this.car)
+      .subscribe(data => this.reviews = data);
+  }
+
+  getFilteredReviews(car) {
+    this.api.getFiltered('reviews', this.car)
+      .subscribe(data => this.reviews = data);
+>>>>>>> master
   }
 
   onChange(make) {

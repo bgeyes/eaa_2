@@ -93,14 +93,14 @@ angular-star-rating@3.0.8
 MIT
 MIT
 
+@angular/common@4.4.6
+MIT
+MIT
+
 @angular/forms@4.4.6
 MIT
 MIT
 
 @angular/platform-browser@4.4.6
-MIT
-MIT
-
-@angular/common@4.4.6
 MIT
 MIT

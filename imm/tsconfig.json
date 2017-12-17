@@ -2,6 +2,14 @@
   "compileOnSave": false,
   "compilerOptions": {
     "outDir": "./dist/out-tsc",
+    "baseUrl": ".",
+    "paths": {
+      "@angular/*": [
+        "../node_modules/@angular/*"
+      ],
+      "@angular/common/http": ["../node_modules/@angular/common/http/src/module"],
+      "jquery": ["node_modules/jquery/dist/jquery"]
+    },
     "sourceMap": true,
     "declaration": false,
     "moduleResolution": "node",
@@ -15,5 +23,11 @@
       "es2017",
       "dom"
     ]
-  }
+  },
+  "angularCompilerOptions": {
+    "skipTemplateCodegen": true,
+    "skipMetadataEmit": false,
+    "strictMetadataEmit": true,
+    "annotationsAs": "decorators"
+ }
 }
