@@ -44,11 +44,13 @@ function apiRouter(database) {
 
   router.get('/reviews', (req, res) => {
 
-      const car = req.body;
+      const car = req.query;
+      console.log(req);
+      console.log(req.query);
     
       const reviewsCollection = database.collection('reviews');
     
-      reviewsCollection.find({ model: car.model }).toArray((err, docs) => {
+      reviewsCollection.find(car).toArray((err, docs) => {
       return res.json(docs)
      });
     

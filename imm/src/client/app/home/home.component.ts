@@ -11,7 +11,7 @@ import { NgForm } from '@angular/forms';
 export class HomeComponent implements OnInit {
 
   loading: Boolean = false;
-  car: Car;
+  car: Car = { make: '', model: ['']};
   cars: Car[];
   models: String[];
   @Output() searchFilterEvent = new EventEmitter();
