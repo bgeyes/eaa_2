@@ -38,6 +38,12 @@
 </button>
 <div class="ui container" *ngIf="reviews">
   <div class="ui grid">
+    <div *ngIf="reviews.length<0">
+      <div>Nici o recenzie pentru acest model.</div>
+      <button
+        class="ui submit large green button left floated"
+        [routerLink]="['/new-review']">Adauga recenzie</button>
+  </div>
     <app-review *ngFor="let review of reviews" [review]="review"></app-review>
   </div>
 </div>
