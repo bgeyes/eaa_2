@@ -1,31 +1,26 @@
-<div class="search-form-container">  
-  <form class="ui big form" #contactForm="ngForm" (submit)="onSubmit(contactForm)" [class.loading]="loading">
-    <div class="fields">
-      <div class="six wide field">
-        <label>Marca*</label>
-        <div class="four fields">         
-            <select required class="ui dropdown" 
-                name="make" 
-                ngModel #make="ngModel" 
-                (change)="onChange($event.target.value)">
-              <option value="0"></option>
-              <option *ngFor='let car of cars' value="{{car.make}}">{{car.make}}</option>
-            </select>   
-        </div>
-      </div>
-      <div class="six wide field">
-        <label>Model*</label>
-        <div class="four fields">       
-            <select required class="ui fluid dropdown" name="model" ngModel #model="ngModel">
-              <option value="0"></option>
-              <option *ngFor='let model of models' value="{{model}}">{{model}}</option>
-            </select>        
-        </div>
-      </div>
+<div class="ui mobile reversed center aligned two column stackable grid">
+  <div class="seven wide column" style="padding: 0px;">
+    <div class="ui segment left">
+      <img class="ui fluid image" src="profiles/cumasina.jpg" alt="">
     </div>
-    <button [disabled]="!contactForm.form.valid" 
-        type="button" 
-        class="ui submit large green button right floated" 
-        [routerLink]="['/reviews']">Cauta</button>
-  </form>
+  </div>
+  <div class="nine wide column" style="padding: 0px;">
+    <div class="ui segment right">
+      <h1 class="textarea1">Ai masina?</h1>
+      <h3 class="textarea2">Spune-le si altora ce iti place si ce nu iti place la ea!</h3>
+    </div>
+  </div>
+</div>
+<div class="ui center aligned two column stackable grid">
+  <div class="ten wide column" style="padding: 0px;">
+    <div class="ui segment right">
+      <h1 class="textarea1">Nu ai masina dar iti cauti?</h1>
+      <h3 class="textarea2">Afla ce le place si ce nu celor care au deja masina ce ti-o doresti!</h3>
+    </div>
+  </div>
+  <div class="six wide column" style="padding: 0px;">
+    <div class="ui segment left">
+      <img class="ui fluid image" src="profiles/faramasina.jpg" alt="">
+    </div>
+  </div>
 </div>
