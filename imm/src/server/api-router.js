@@ -44,7 +44,6 @@ function apiRouter(database) {
 
   router.get('/reviews', (req, res) => {
 
-<<<<<<< HEAD
       const car = req.query;
       console.log(req);
       console.log(req.query);
@@ -52,18 +51,6 @@ function apiRouter(database) {
       const reviewsCollection = database.collection('reviews');
     
       reviewsCollection.find(car).toArray((err, docs) => {
-=======
-      const model = req.params;
-
-      console.log(model);
-      console.log(req);
-
-      //const car = { model: "Captiva" };
-    
-      const reviewsCollection = database.collection('reviews');
-    
-      reviewsCollection.find(model).toArray((err, docs) => {
->>>>>>> master
       return res.json(docs)
      });
     
