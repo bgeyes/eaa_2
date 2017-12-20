@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
@@ -18,8 +17,7 @@ import { StarRatingModule } from 'angular-star-rating';
 import { ReviewListComponent } from './review-list/review-list.component';
 import { ReviewComponent } from './review/review.component';
 import { HomeComponent } from './home/home.component';
-import { HttpClientModule } from '@angular/common/http/src/module';
-import { HttpClient, HttpClientXsrfModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -37,9 +35,7 @@ import { HttpClient, HttpClientXsrfModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     FormsModule,
-    //HttpModule,
-    //HttpClientModule,
-    HttpClientXsrfModule,
+    HttpModule,
     AppRoutingModule,
     StarRatingModule.forRoot()
   ],

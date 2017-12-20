@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import { AuthService } from './auth.service';
 import { Headers, Request, RequestOptions, RequestMethod, Response, Http } from '@angular/http';
@@ -6,7 +7,6 @@ import { URLSearchParams, RequestOptionsArgs } from '@angular/http';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/throw';
-import { Observable } from 'rxjs/Observable';
 import { environment } from '../../environments/environment';
 
 

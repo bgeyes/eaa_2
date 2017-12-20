@@ -45,7 +45,6 @@ function apiRouter(database) {
   router.get('/reviews', (req, res) => {
 
       const car = req.query;
-      console.log(req);
       console.log(req.query);
     
       const reviewsCollection = database.collection('reviews');

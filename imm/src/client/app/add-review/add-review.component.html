@@ -41,7 +41,7 @@
         <input type="text" name="yor" ngModel maxlength="4" minlength="4" #yor="ngModel" required placeholder="####">
         <div class="ui red message tiny" *ngIf="yor.invalid && yor.dirty">
             <div *ngIf="yor.errors.required">
-                Va rugam introduceti anul
+                Anul fabricatiei este camp obligatoriu
             </div>
             <div *ngIf="yor.errors.minlength">
                 Minim 4 cifre

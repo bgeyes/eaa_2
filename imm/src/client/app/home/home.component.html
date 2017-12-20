@@ -1,4 +1,4 @@
-<div class="ui mobile reversed center aligned two column stackable grid">
+<div class="ui mobile reversed center aligned two equal height column stackable grid">
   <div class="seven wide column" style="padding: 0px;">
     <div class="ui segment left">
       <img class="ui fluid image" src="profiles/cumasina.jpg" alt="">
@@ -8,14 +8,20 @@
     <div class="ui segment right">
       <h1 class="textarea1">Ai masina?</h1>
       <h3 class="textarea2">Spune-le si altora ce iti place si ce nu iti place la ea!</h3>
+      <button
+      class="ui submit large green button center aligned"
+      [routerLink]="['/new-review']">Adauga impresii</button>
     </div>
   </div>
 </div>
-<div class="ui center aligned two column stackable grid">
+<div class="ui center aligned two equal height column stackable grid">
   <div class="ten wide column" style="padding: 0px;">
     <div class="ui segment right">
       <h1 class="textarea1">Nu ai masina dar iti cauti?</h1>
       <h3 class="textarea2">Afla ce le place si ce nu celor care au deja masina ce ti-o doresti!</h3>
+      <button
+      class="ui submit large blue button center aligned"
+      [routerLink]="['/reviews']">Cauta opinii</button>
     </div>
   </div>
   <div class="six wide column" style="padding: 0px;">
