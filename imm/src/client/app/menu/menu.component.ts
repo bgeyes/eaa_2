@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../shared/auth.service';
+import {SuiModule} from 'ng2-semantic-ui';
 
 @Component({
   selector: 'app-menu',

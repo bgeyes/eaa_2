@@ -36,6 +36,7 @@
     "jquery": "^3.2.1",
     "jsonwebtoken": "^7.4.1",
     "mongodb": "^2.2.26",
+    "ng2-semantic-ui": "^0.9.6",
     "npm-run-all": "^4.1.2",
     "rxjs": "^5.4.2",
     "semantic-ui": "^2.2.13",

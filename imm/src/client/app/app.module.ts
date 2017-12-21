@@ -17,6 +17,7 @@ import { StarRatingModule } from 'angular-star-rating';
 import { ReviewListComponent } from './review-list/review-list.component';
 import { ReviewComponent } from './review/review.component';
 import { HomeComponent } from './home/home.component';
+import {SuiModule} from 'ng2-semantic-ui';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { HomeComponent } from './home/home.component';
     FormsModule,
     HttpModule,
     AppRoutingModule,
-    StarRatingModule.forRoot()
+    StarRatingModule.forRoot(),
+    SuiModule
   ],
   providers: [ApiService, AuthService, AuthGuard],
   bootstrap: [AppComponent]

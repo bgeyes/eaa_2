@@ -1,3 +1,25 @@
-<app-menu></app-menu>
-<router-outlet></router-outlet>
-<footer>FOOTER</footer>
+<sui-sidebar-container class="ui bottom attached segment">
+    <sui-sidebar class="inverted vertical grey" #sidebar>
+        <div class="header item">
+            <h1>MasinaMea.info</h1>
+        </div>
+        <div class="item in-menu" [routerLink]="['/']" (click)="sidebar.close()">    
+                <h3>Acasa</h3>
+        </div>
+        <div class="item in-menu" [routerLink]="['/reviews']" (click)="sidebar.close()">   
+                <h3>Recenzii</h3>
+        </div>
+        <div class="item in-menu" [routerLink]="['/new-review']" (click)="sidebar.close()">
+                <h3>Adauga Recenzie</h3>
+        </div>
+    </sui-sidebar>
+    <sui-sidebar-sibling [isDimmedWhenVisible]="true">
+        <div class="ui basic segment">
+            <i class="sidebar big icon" (click)="sidebar.open()" style="z-index:1000; position:absolute;"></i>
+            <router-outlet></router-outlet>
+            <footer>FOOTER</footer>
+        </div>
+    </sui-sidebar-sibling>
+</sui-sidebar-container>
+
+
