@@ -12,6 +12,9 @@
         <div class="item in-menu" [routerLink]="['/new-review']" (click)="sidebar.close()">
                 <h3>Adauga Recenzie</h3>
         </div>
+        <div class="item in-menu" (click)="logout(); sidebar.close()" *ngIf="auth.isLoggedIn()">
+                <h3>Logout</h3>
+        </div>
     </sui-sidebar>
     <sui-sidebar-sibling [isDimmedWhenVisible]="true">
         <div class="ui basic segment">

@@ -1,9 +1,4 @@
-footer {
-       margin-top: 500px;
-       background-color: rgb(15, 8, 75);
-       text-align: center;
-       color: #ffffff;
-}
+
 
 button {
     font-family: "Quicksand", "sans-serif";
@@ -14,8 +9,17 @@ button {
     border: 0px solid #fff;
 } */
 
+div.item.in-menu h3{
+    font-family: "Quicksand", "sans-serif";
+}
+
 div.item.in-menu:hover {
     background-color: #000000;
 }
+
+.header.item h1 {
+    font-family: "Anton", "sans-serif";
+}
+
 
 

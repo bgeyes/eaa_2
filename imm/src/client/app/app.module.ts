@@ -18,6 +18,7 @@ import { ReviewListComponent } from './review-list/review-list.component';
 import { ReviewComponent } from './review/review.component';
 import { HomeComponent } from './home/home.component';
 import {SuiModule} from 'ng2-semantic-ui';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import {SuiModule} from 'ng2-semantic-ui';
     AddReviewComponent,
     ReviewListComponent,
     ReviewComponent,
-    HomeComponent
+    HomeComponent,
+    FooterComponent
 ],
   imports: [
     BrowserModule,

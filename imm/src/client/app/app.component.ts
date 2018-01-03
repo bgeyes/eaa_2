@@ -1,21 +1,22 @@
-import { Component } from '@angular/core';
+import { AuthService } from './shared/auth.service';
+import { Component, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
+  //encapsulation: ViewEncapsulation.None,
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  setStyle: false;
   
-  constructor() {
+  constructor(public auth: AuthService) {
   }
-  
-  getStyle() {
-    if(this.setStyle) {
-      return "yellow";
-    } else {
-      return "";
-    }
+
+  logout() {
+    this.auth.logout();
+  }
+
+  setStyle() {
+
   }
 }

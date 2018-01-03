@@ -37,7 +37,7 @@ const routes: Routes = [
   {
     path: 'new-review',
     component: AddReviewComponent,
-    canActivate: [AuthGuard]
+    //canActivate: [AuthGuard]
   },
   {
     path: 'login',

@@ -1,0 +1,45 @@
+.ui.stackable.grid {
+    background-color: #000000;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.textarea1 {
+  margin-top: 2em;
+  position: relative;
+  margin-bottom: 5px;
+  font-family: "Anton", "sans-serif";
+  color: #ffffff;
+}
+
+.textarea2 {
+    display: block;
+    margin-top: 2em;
+    position: relative;
+    margin-bottom: 5px;
+    font-family: "Anton", "sans-serif";
+    color: #ffffff;
+  }
+
+.textarea2 a {
+    margin-top: 2em;
+    color: #ffffff;
+    font-family: "Quicksand", "sans-serif";
+    display: inline-block;
+}
+
+.textarea3 {
+  margin-top: 5px;
+  position: relative;
+  margin-bottom: 1em;
+  font-family: "Quicksand", "sans-serif";
+  color: #ffffff;
+}
+
+.textarea3 a{
+    color: #ffffff;
+  }
+
+.ui.segment {
+    margin-top: 4em;
+}

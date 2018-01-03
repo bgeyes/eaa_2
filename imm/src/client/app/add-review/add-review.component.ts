@@ -6,6 +6,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Car } from '../shared/car.model';
 import { OnClickEvent, OnRatingChangeEven, OnHoverRatingChangeEvent } from 'angular-star-rating';
 
+
 @Component({
   selector: 'app-add-review',
   templateUrl: './add-review.component.html',
@@ -20,6 +21,8 @@ export class AddReviewComponent implements OnInit {
   rating: any;
   currentUser: string;
   additionalInfo: Boolean = false;
+  selected: String[];
+  rate: any;
 
   //star rating 
   onClickResult:OnClickEvent;
