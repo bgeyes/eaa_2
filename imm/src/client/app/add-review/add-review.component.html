@@ -1,3 +1,12 @@
+<div class="ui center aligned stackable grid">
+  <div class="stretched row" style="padding: 0px;">
+    <div class="column" style="padding: 0px;">
+      <div class="ui segment left item">
+        <p>Adauga o recenzie</p>
+      </div>
+    </div>
+  </div>
+</div>
 <div class="add-form-container">
   <div class="ui icon message" *ngIf="newReview">
     <i class="notched check green icon"></i>
@@ -153,15 +162,42 @@
           <option value="directie">directie</option>
       </select> -->
     </div>
-    
+    <div class="ui checkbox">
+      <input type="checkbox" name="example" [(ngModel)]="isActive">
+      <label>1</label>
+    </div>
+    <div class="ui checkbox">
+      <input type="checkbox" name="example" [(ngModel)]="isActive2">
+      <label>2</label>
+    </div>
     <div class="eight wide field">
       <label>Localitate*</label>
       <input type="text" placeholder="Locatie" required name="location" ngModel>
     </div>
+    <div class="ui two equal height column stackable grid">
+        <div class="stretched row" style="padding: 0px;">
+          <div class="nine wide column" style="padding: 0px;">
+            <div class="ui segment">
+              <label>Localitate*</label>
+              <input type="text" placeholder="Locatie" required name="location" ngModel>
+            </div>
+          </div>
+          <div class="seven wide column" style="padding: 0px;">
+              <div class="ui segment">
+                <star-rating-comp   [starType]="'svg'" 
+                  [hoverEnabled]="true"
+                  (onClick)="onClick($event)" 
+                  [labelText]="'Rating*'" required
+                  >                             
+                </star-rating-comp>
+              </div>
+          </div>
+        </div>
+    </div>
     <button [disabled]="!contactForm.form.valid" type="submit" class="ui submit large green button right floated">Submit</button>
-    <button class="ui large blue button right floated" (click)="additionalInfo = !additionalInfo">Mai multe optiuni</button>
+    <button class="ui large blue button right floated" (click)="addInfo()" type="button">Mai multe optiuni</button>
   </form>
 </div>
 
 
-<script type="text/javascript">$(document).ready(function(){$(".rating").rating();});</script>
+

@@ -23,6 +23,10 @@ export class AddReviewComponent implements OnInit {
   additionalInfo: Boolean = false;
   selected: String[];
   rate: any;
+  isActive = false;
+  isActive2 = false;
+
+  
 
   //star rating 
   onClickResult:OnClickEvent;
@@ -43,16 +47,6 @@ export class AddReviewComponent implements OnInit {
     this.onClickResult = $event;
   };
 
-  /* onRatingChange = ($event:OnRatingChangeEven) => {
-    console.log('onRatingUpdated $event: ', $event);
-    this.onRatingChangeResult = $event;
-  };
-
-  onHoverRatingChange = ($event:OnHoverRatingChangeEvent) => {
-    console.log('onHoverRatingChange $event: ', $event);
-    this.onHoverRatingChangeResult = $event;
-  }; */
-
   onChange(make) {
     if (make == '0') {
       return this.models = []
@@ -64,6 +58,11 @@ export class AddReviewComponent implements OnInit {
       };
     };
   };
+
+  addInfo() {
+    this.additionalInfo = !this.additionalInfo;
+    console.log(this.additionalInfo);
+  }
 
   onSubmit(form: NgForm) {
     this.loading = true;
@@ -84,7 +83,7 @@ export class AddReviewComponent implements OnInit {
       review: formValues.review,
       recommend: formValues.recommend,
       rating: this.onClickResult.rating,
-      commonProblems: formValues.commonProblems,
+      commonProblems: formValues.isActive,
       location: formValues.location
     };
     
