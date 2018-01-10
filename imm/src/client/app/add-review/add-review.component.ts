@@ -5,6 +5,7 @@ import { Review } from './../shared/review.model';
 import { Component, OnInit, Input } from '@angular/core';
 import { Car } from '../shared/car.model';
 import { OnClickEvent, OnRatingChangeEven, OnHoverRatingChangeEvent } from 'angular-star-rating';
+import { fail } from 'assert';
 
 
 @Component({
@@ -23,8 +24,13 @@ export class AddReviewComponent implements OnInit {
   additionalInfo: Boolean = false;
   selected: String[];
   rate: any;
-  isActive = false;
-  isActive2 = false;
+  frane = false;
+  parteaElectrica = false;
+  motor = false;
+  cutieViteze = false;
+  suspensie = false;
+  directie = false;
+  commProbl = {};
 
   
 
@@ -67,7 +73,14 @@ export class AddReviewComponent implements OnInit {
   onSubmit(form: NgForm) {
     this.loading = true;
 
-    const formValues = Object.assign({}, form.value);
+    this.frane ? this.commProbl["frane"] = true : this.commProbl;
+    this.parteaElectrica ? this.commProbl["parteaElectrica"] = true : this.commProbl;
+    this.motor ? this.commProbl["motor"] = true : this.commProbl;
+    this.cutieViteze ? this.commProbl["cutieViteze"] = true : this.commProbl;
+    this.suspensie ? this.commProbl["suspensie"] = true : this.commProbl;
+    this.directie ? this.commProbl["directie"] = true : this.commProbl;
+
+    const formValues = Object.assign({}, form.value); 
 
     const review: Review = {
       name: this.currentUser,
@@ -83,7 +96,7 @@ export class AddReviewComponent implements OnInit {
       review: formValues.review,
       recommend: formValues.recommend,
       rating: this.onClickResult.rating,
-      commonProblems: formValues.isActive,
+      commonProblems: this.commProbl,
       location: formValues.location
     };
     

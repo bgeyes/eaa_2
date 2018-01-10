@@ -25,7 +25,11 @@
       <div class="content">
         <div>{{review.review}}</div>
       </div>
-      <div class="probleme"><strong>Probleme comune:</strong>  {{review.commonProblems}}</div>
+      <div class="probleme"><strong>Probleme comune:</strong></div>
+      <ul>
+        <li *ngFor='let problem of review.commonProblems'>{{problem}}</li>
+      </ul>
+      <!-- <div class="probleme" *ngFor='let problem of review.commonProblems'><strong>Probleme comune:</strong>  {{problem}}</div> -->
     </div>
     <div class="four wide column"></div>
 </div>

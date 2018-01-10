@@ -12,6 +12,6 @@ export interface Review {
       review: string;
       recommend: string;
       rating: any;
-      commonProblems: string;
+      commonProblems: {};
       location: string;
     }

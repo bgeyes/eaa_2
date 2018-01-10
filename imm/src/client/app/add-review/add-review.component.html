@@ -1,7 +1,7 @@
 <div class="ui center aligned stackable grid">
   <div class="stretched row" style="padding: 0px;">
     <div class="column" style="padding: 0px;">
-      <div class="ui segment left item">
+      <div class="ui segment item">
         <p>Adauga o recenzie</p>
       </div>
     </div>
@@ -151,92 +151,107 @@
     </div> 
     <div class="eight wide field">
       <label>Probleme comune*</label>
-      <input type="text" placeholder="Probleme comune" name="commonProblems" ngModel>
-      <!-- <select class="ui fluid search dropdown" multiple="" name="commonProblems" required ngModel>
-          <option value=""></option>
-          <option value="frane">frane</option>
-          <option value="partea electrica">partea electrica</option>
-          <option value="motor">motor</option>
-          <option value="cuite viteze/ambreiaj">cuite viteze/ambreiaj</option>
-          <option value="suspensie">suspensie</option>
-          <option value="directie">directie</option>
-      </select> -->
     </div>
-    <div class="ui checkbox">
-      <input type="checkbox" name="example" [(ngModel)]="isActive">
-      <label>1</label>
+    <div class="three fields">
+        <div class="ui checkbox probleme four wide field">
+          <input type="checkbox" name="example" [(ngModel)]="frane">
+          <label>Frane</label>
+        </div>
+        <div class="ui checkbox probleme four wide field">
+          <input type="checkbox" name="example" [(ngModel)]="parteaElectrica">
+          <label>Partea electrica</label>
+        </div>
+        <div class="ui checkbox probleme four wide field">
+          <input type="checkbox" name="example" [(ngModel)]="motor">
+          <label>Motor</label>
+        </div>
     </div>
-    <div class="ui checkbox">
-      <input type="checkbox" name="example" [(ngModel)]="isActive2">
-      <label>2</label>
+    <div class="three fields">
+        <div class="ui checkbox probleme four wide field">
+          <input type="checkbox" name="example" [(ngModel)]="cutieViteze">
+          <label>Cutie viteze/ambreiaj</label>
+        </div>
+        <div class="ui checkbox probleme four wide field">
+          <input type="checkbox" name="example" [(ngModel)]="suspensie">
+          <label>Suspensie</label>
+        </div>
+        <div class="ui checkbox probleme four wide field">
+          <input type="checkbox" name="example" [(ngModel)]="directie">
+          <label>Directie&nbsp;</label>
+        </div>
     </div>
     <div class="eight wide field">
       <label>Localitate*</label>
       <input type="text" placeholder="Locatie" required name="location" ngModel>
     </div>
-    <div class="ui two equal height column stackable grid" *ngIf='additionalInfo'>
-        <div class="stretched row" style="padding: 0px;">
-          <div class="nine wide column" style="padding: 0px;">
-            <div class="ui segment">
-              <label>Performanta</label>
-              <textarea name="performanta" cols="10" rows="5" ngModel></textarea>
-            </div>
-          </div>
-          <div class="seven wide column" style="padding: 0px;">
-              <div class="ui segment">
-                <star-rating-comp   [starType]="'svg'" 
-                  [hoverEnabled]="true"
-                  (onClick)="onClick($event)" 
-                  [labelText]="'Rating'" required
-                  >                             
-                </star-rating-comp>
-              </div>
-          </div>
-        </div>
+    <div class="buttons" *ngIf='additionalInfo'>
+      <button class="ui large blue button right floated" (click)="addInfo()" type="button">Mai putine detalii</button>
     </div>
-    <div class="ui two equal height column stackable grid" *ngIf='additionalInfo'>
-        <div class="stretched row" style="padding: 0px;">
-          <div class="nine wide column" style="padding: 0px;">
-            <div class="ui segment">
-              <label>Randament</label>
-              <textarea name="performanta" cols="5" rows="5" ngModel></textarea>
+    <div class="campuri extra">
+      <div class="ui two equal height column stackable grid" *ngIf='additionalInfo'>
+          <div class="stretched row" style="padding: 0px;">
+            <div class="twelve wide column" style="padding: 0px;">
+              <div class="ui segment">
+                <label>Performanta</label>
+                <textarea name="performanta" cols="10" rows="5" ngModel></textarea>
+              </div>
+            </div>
+            <div class="four wide column" style="padding: 0px;">
+                <div class="ui segment">
+                  <star-rating-comp   [starType]="'svg'" 
+                    [hoverEnabled]="true"
+                    (onClick)="onClick($event)" 
+                    [labelText]="'Rating'" required
+                    >                             
+                  </star-rating-comp>
+                </div>
             </div>
           </div>
-          <div class="seven wide column" style="padding: 0px;">
+      </div>
+      <div class="ui two equal height column stackable grid" *ngIf='additionalInfo'>
+          <div class="stretched row" style="padding: 0px;">
+            <div class="twelve wide column" style="padding: 0px;">
               <div class="ui segment">
-                <star-rating-comp   [starType]="'svg'" 
-                  [hoverEnabled]="true"
-                  (onClick)="onClick($event)" 
-                  [labelText]="'Rating'" required
-                  >                             
-                </star-rating-comp>
+                <label>Randament</label>
+                <textarea name="randament" cols="5" rows="5" ngModel></textarea>
               </div>
-          </div>
-        </div>
-    </div>
-    <div class="ui two equal height column stackable grid" *ngIf='additionalInfo'>
-        <div class="stretched row" style="padding: 0px;">
-          <div class="nine wide column" style="padding: 0px;">
-            <div class="ui segment">
-              <label>Costuri</label>
-              <textarea name="performanta" cols="10" rows="5" ngModel></textarea>
+            </div>
+            <div class="four wide column" style="padding: 0px;">
+                <div class="ui segment">
+                  <star-rating-comp   [starType]="'svg'" 
+                    [hoverEnabled]="true"
+                    (onClick)="onClick($event)" 
+                    [labelText]="'Rating'" required
+                    >                             
+                  </star-rating-comp>
+                </div>
             </div>
           </div>
-          <div class="seven wide column" style="padding: 0px;">
+      </div>
+      <div class="ui two equal height column stackable grid" *ngIf='additionalInfo'>
+          <div class="stretched row" style="padding: 0px;">
+            <div class="twelve wide column" style="padding: 0px;">
               <div class="ui segment">
-                <star-rating-comp   [starType]="'svg'" 
-                  [hoverEnabled]="true"
-                  (onClick)="onClick($event)" 
-                  [labelText]="'Rating'" required
-                  >                             
-                </star-rating-comp>
+                <label>Costuri</label>
+                <textarea name="performanta" cols="10" rows="5" ngModel></textarea>
               </div>
+            </div>
+            <div class="four wide column" style="padding: 0px;">
+                <div class="ui segment">
+                  <star-rating-comp   [starType]="'svg'" 
+                    [hoverEnabled]="true"
+                    (onClick)="onClick($event)" 
+                    [labelText]="'Rating'" required
+                    >                             
+                  </star-rating-comp>
+                </div>
+            </div>
           </div>
-        </div>
+      </div>
     </div>
     <div class="buttons">
       <button [disabled]="!contactForm.form.valid" type="submit" class="ui submit large green button right floated">Submit</button>
-      <button class="ui large blue button right floated" (click)="addInfo()" type="button">Mai multe optiuni</button>
+      <button class="ui large blue button right floated" (click)="addInfo()" type="button" *ngIf='!additionalInfo'>Mai multe detalii</button>
     </div>
   </form>
 </div>
