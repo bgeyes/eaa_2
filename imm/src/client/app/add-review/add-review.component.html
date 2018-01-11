@@ -125,15 +125,10 @@
     <div class="twelve fields">
       <div class="eight wide field">
         <label>Recomand*</label>
-        <div class="two fields">
-          <div class="field">
-            <select class="ui fluid search dropdown" required name="recommend" ngModel>
-              <option value=""></option>
-              <option value="Da">Da</option>
-              <option value="Nu">Nu</option>
-            </select>
-          </div>
-        </div>
+        <span *ngIf="recommend" (click)="thumbsUp()"><i class="thumbs up icon blue big" ></i>Da</span>&nbsp;
+        <span *ngIf="recommend" (click)="thumbsUp()"><i class="thumbs outline down icon red big"></i></span>
+        <span *ngIf="!recommend" (click)="thumbsUp()"><i class="thumbs outline up icon blue big" ></i></span>&nbsp;
+        <span *ngIf="!recommend" (click)="thumbsUp()"><i class="thumbs down icon red big"></i>Nu</span>
       </div>
       <div class="three fields">
         <div class="three wide field">
@@ -192,17 +187,17 @@
           <div class="stretched row" style="padding: 0px;">
             <div class="twelve wide column" style="padding: 0px;">
               <div class="ui segment">
-                <label>Performanta</label>
-                <textarea name="performanta" cols="10" rows="5" ngModel></textarea>
+                <label>Fiabilitate</label>
+                <textarea name="fiabilitate" cols="10" rows="5" ngModel></textarea>
               </div>
             </div>
             <div class="four wide column" style="padding: 0px;">
                 <div class="ui segment">
                   <star-rating-comp   [starType]="'svg'" 
                     [hoverEnabled]="true"
-                    (onClick)="onClick($event)" 
+                    (onClick)="reliability($event)" 
                     [labelText]="'Rating'" required
-                    >                             
+                    >                         
                   </star-rating-comp>
                 </div>
             </div>
@@ -212,15 +207,15 @@
           <div class="stretched row" style="padding: 0px;">
             <div class="twelve wide column" style="padding: 0px;">
               <div class="ui segment">
-                <label>Randament</label>
-                <textarea name="randament" cols="5" rows="5" ngModel></textarea>
+                <label>Performanta</label>
+                <textarea name="performanta" cols="5" rows="5" ngModel></textarea>
               </div>
             </div>
             <div class="four wide column" style="padding: 0px;">
                 <div class="ui segment">
                   <star-rating-comp   [starType]="'svg'" 
                     [hoverEnabled]="true"
-                    (onClick)="onClick($event)" 
+                    (onClick)="performance($event)" 
                     [labelText]="'Rating'" required
                     >                             
                   </star-rating-comp>
@@ -233,14 +228,14 @@
             <div class="twelve wide column" style="padding: 0px;">
               <div class="ui segment">
                 <label>Costuri</label>
-                <textarea name="performanta" cols="10" rows="5" ngModel></textarea>
+                <textarea name="costuri" cols="10" rows="5" ngModel></textarea>
               </div>
             </div>
             <div class="four wide column" style="padding: 0px;">
                 <div class="ui segment">
                   <star-rating-comp   [starType]="'svg'" 
                     [hoverEnabled]="true"
-                    (onClick)="onClick($event)" 
+                    (onClick)="costs($event)" 
                     [labelText]="'Rating'" required
                     >                             
                   </star-rating-comp>

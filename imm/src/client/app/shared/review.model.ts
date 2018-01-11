@@ -10,8 +10,14 @@ export interface Review {
       stateAtPurchase: string;
       usage: string;
       review: string;
-      recommend: string;
+      recommend: Boolean;
       rating: any;
       commonProblems: {};
       location: string;
+      performanta?: any;
+      fiabilitate?: any;
+      costuri?: any;
+      performantaText?: string;
+      fiabilitateText?: string;
+      costuriText?: string;
     }

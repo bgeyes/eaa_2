@@ -31,11 +31,15 @@ export class AddReviewComponent implements OnInit {
   suspensie = false;
   directie = false;
   commProbl = {};
+  recommend: Boolean = true;
 
   
 
   //star rating 
   onClickResult:OnClickEvent;
+  performanta:OnClickEvent;
+  fiabilitate:OnClickEvent;
+  costuri:OnClickEvent;
   onHoverRatingChangeResult:OnHoverRatingChangeEvent;
   onRatingChangeResult:OnRatingChangeEven;
 
@@ -53,6 +57,22 @@ export class AddReviewComponent implements OnInit {
     this.onClickResult = $event;
   };
 
+  performance = ($event:OnClickEvent) => {
+    console.log('performance $event: ', $event);
+    this.performanta = $event;
+  };
+
+  reliability = ($event:OnClickEvent) => {
+    console.log('reliability $event: ', $event);
+    this.fiabilitate = $event;
+  };
+
+  costs = ($event:OnClickEvent) => {
+    console.log('costs $event: ', $event);
+    this.costuri = $event;
+  };
+
+  //make and model dropdown menu
   onChange(make) {
     if (make == '0') {
       return this.models = []
@@ -68,6 +88,10 @@ export class AddReviewComponent implements OnInit {
   addInfo() {
     this.additionalInfo = !this.additionalInfo;
     console.log(this.additionalInfo);
+  }
+
+  thumbsUp() {
+    this.recommend = !this.recommend;
   }
 
   onSubmit(form: NgForm) {
@@ -94,10 +118,16 @@ export class AddReviewComponent implements OnInit {
       stateAtPurchase: formValues.stateAtPurchase,
       usage: formValues.usage,
       review: formValues.review,
-      recommend: formValues.recommend,
+      recommend: this.recommend,
       rating: this.onClickResult.rating,
       commonProblems: this.commProbl,
-      location: formValues.location
+      location: formValues.location,
+      performanta: this.performanta.rating,
+      fiabilitate: this.fiabilitate.rating,
+      costuri: this.costuri.rating,
+      performantaText: formValues.performanta,
+      fiabilitateText: formValues.fiabilitate,
+      costuriText: formValues.costuri
     };
     
     this.api.post('reviews', review)

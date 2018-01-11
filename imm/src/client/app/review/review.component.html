@@ -15,8 +15,8 @@
       <div><strong>Utilizare:</strong> {{review.avgMlg}}</div>
       <div><strong>Proprietar de:</strong> {{review.ownershipPeriod}}</div>
       <div><strong>Recomand:</strong> 
-          <i class="thumbs outline up icon blue" *ngIf="review.recommend == 'Da'"></i>
-          <i class="thumbs outline down icon red" *ngIf="review.recommend == 'Nu'"></i> 
+          <span *ngIf="review.recommend"><i class="thumbs outline up icon blue"></i>Da</span>
+          <span><i class="thumbs outline down icon red" *ngIf="!review.recommend"></i>Nu</span>
           {{review.recommend}}
       </div>
     </div>
