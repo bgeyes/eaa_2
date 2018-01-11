@@ -27,9 +27,39 @@
       </div>
       <div class="probleme"><strong>Probleme comune:</strong></div>
       <ul>
-        <li *ngFor='let problem of review.commonProblems'>{{problem}}</li>
+        <li *ngIf="review.commonProblems.frane">Frane</li>
+        <li *ngIf="review.commonProblems.cutieViteze">Cutie viteze/ambreiaj</li>
+        <li *ngIf="review.commonProblems.parteaElectrica">Partea Electrica</li>
+        <li *ngIf="review.commonProblems.suspensie">Suspensie</li>
+        <li *ngIf="review.commonProblems.motor">Motor</li>
+        <li *ngIf="review.commonProblems.directie">Directie </li>
       </ul>
-      <!-- <div class="probleme" *ngFor='let problem of review.commonProblems'><strong>Probleme comune:</strong>  {{problem}}</div> -->
+      <div class="header">Fiabilitate</div>
+      <div class="content">{{review.fiabilitateText}}</div>
+      <div class="rating">
+        <star-rating-comp class="stars" [starType]="'svg'" 
+          [rating]="review.fiabilitate" 
+          [readOnly]="true" 
+          [size]="'medium'">
+        </star-rating-comp>
+      </div>
+      <div class="header">Performanta</div>
+      <div class="content">{{review.performantaText}}</div>
+      <div class="rating two wide column">
+        <star-rating-comp class="stars" [starType]="'svg'" 
+          [rating]="review.performanta" 
+          [readOnly]="true" 
+          [size]="'medium'">
+        </star-rating-comp>
+      </div>
+      <div class="header">Costuri</div>
+      <div class="content">{{review.costuriText}}</div>
+      <div class="rating">
+        <star-rating-comp class="stars" [starType]="'svg'" 
+          [rating]="review.costuri" 
+          [readOnly]="true" 
+          [size]="'medium'">
+        </star-rating-comp>
+      </div>
     </div>
-    <div class="four wide column"></div>
 </div>

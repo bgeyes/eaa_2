@@ -12,7 +12,7 @@ export interface Review {
       review: string;
       recommend: Boolean;
       rating: any;
-      commonProblems: {};
+      commonProblems: any;
       location: string;
       performanta?: any;
       fiabilitate?: any;

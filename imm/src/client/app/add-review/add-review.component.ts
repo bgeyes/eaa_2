@@ -33,6 +33,11 @@ export class AddReviewComponent implements OnInit {
   commProbl = {};
   recommend: Boolean = true;
 
+  commonProblems = {
+        "frane": true,
+        "parteaElectrica": true
+  };
+
   
 
   //star rating 
@@ -49,6 +54,7 @@ export class AddReviewComponent implements OnInit {
     this.api.get('cars')
       .subscribe(data => this.cars = data);
     this.currentUser = this.auth.getUser();
+    console.log(this.commonProblems.frane);
   };
 
   //star rating

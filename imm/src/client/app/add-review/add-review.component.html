@@ -179,6 +179,11 @@
       <label>Localitate*</label>
       <input type="text" placeholder="Locatie" required name="location" ngModel>
     </div>
+    <div class="eight wide field">
+      <label>Looper*</label>
+      <div *ngIf="commonProblems.frane">Frane</div>
+      <div *ngIf="commonProblems.parteaElectrica">Partea Electrica</div>
+    </div>
     <div class="buttons" *ngIf='additionalInfo'>
       <button class="ui large blue button right floated" (click)="addInfo()" type="button">Mai putine detalii</button>
     </div>
