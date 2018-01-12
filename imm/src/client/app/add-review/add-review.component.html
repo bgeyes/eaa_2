@@ -125,10 +125,10 @@
     <div class="twelve fields">
       <div class="eight wide field">
         <label>Recomand*</label>
-        <span *ngIf="recommend" (click)="thumbsUp()"><i class="thumbs up icon blue big" ></i>Da</span>&nbsp;
-        <span *ngIf="recommend" (click)="thumbsUp()"><i class="thumbs outline down icon red big"></i></span>
-        <span *ngIf="!recommend" (click)="thumbsUp()"><i class="thumbs outline up icon blue big" ></i></span>&nbsp;
-        <span *ngIf="!recommend" (click)="thumbsUp()"><i class="thumbs down icon red big"></i>Nu</span>
+        <span class="recomandare" *ngIf="recommend" (click)="thumbsUp()"><i class="thumbs up icon blue big" ></i>Da</span>&nbsp;
+        <span class="recomandare" *ngIf="recommend" (click)="thumbsUp()"><i class="thumbs outline down icon red big"></i></span>
+        <span class="recomandare" *ngIf="!recommend" (click)="thumbsUp()"><i class="thumbs outline up icon blue big" ></i></span>&nbsp;
+        <span class="recomandare" *ngIf="!recommend" (click)="thumbsUp()"><i class="thumbs down icon red big"></i>Nu</span>
       </div>
       <div class="three fields">
         <div class="three wide field">
@@ -172,17 +172,12 @@
         </div>
         <div class="ui checkbox probleme five wide field">
           <input type="checkbox" name="example" [(ngModel)]="directie">
-          <label>Directie&nbsp;</label>
+          <label>Directie</label>
         </div>
     </div>
     <div class="eight wide field">
       <label>Localitate*</label>
       <input type="text" placeholder="Locatie" required name="location" ngModel>
-    </div>
-    <div class="eight wide field">
-      <label>Looper*</label>
-      <div *ngIf="commonProblems.frane">Frane</div>
-      <div *ngIf="commonProblems.parteaElectrica">Partea Electrica</div>
     </div>
     <div class="buttons" *ngIf='additionalInfo'>
       <button class="ui large blue button right floated" (click)="addInfo()" type="button">Mai putine detalii</button>
