@@ -1,49 +1,62 @@
-<div *ngIf="!showSearch">
-  <button class="ui submit large green button left floated" 
-    type="button"  
-    (click)="showSearch = !showSearch; reviews = []">
-    Noua Cautare
-  </button>
-</div>
-<div class="search-form-container" *ngIf="showSearch">  
-  <form class="ui big form" #carForm="ngForm" (submit)="getFilteredReviews(carForm)" [class.loading]="loading">
-    <div class="fields">
-      <div class="six wide field">
-        <label>Marca*</label>
-        <div class="four fields">         
-            <select required class="ui dropdown" 
-                name="make" 
-                ngModel #make="ngModel" 
-                (change)="onChange($event.target.value)">
-              <option value="0"></option>
-              <option *ngFor='let car of cars' value="{{car.make}}">{{car.make}}</option>
-            </select>   
-        </div>
-      </div>
-      <div class="six wide field">
-        <label>Model*</label>
-        <div class="four fields">       
-            <select required class="ui fluid dropdown" name="model" ngModel #model="ngModel">
-              <option value="0"></option>
-              <option *ngFor='let model of models' value="{{model}}">{{model}}</option>
-            </select>        
-        </div>
+<div class="ui center aligned stackable grid">
+  <div class="stretched row" style="padding: 0px;">
+    <div class="column" style="padding: 0px;">
+      <div class="ui segment item">
+        <p>Cauta o recenzie</p>
       </div>
     </div>
-    <button [disabled]="!carForm.form.valid" 
-        type="submit" 
-        class="ui submit large green button right floated" 
-        >Cauta</button>
-  </form>
+  </div>
 </div>
-<div class="ui container" *ngIf="reviews">
-  <div class="ui grid">
-    <div *ngIf="reviews.length<0">
-      <div>Nici o recenzie pentru acest model.</div>
-      <button
-        class="ui submit large green button left floated"
-        [routerLink]="['/new-review']">Adauga recenzie</button>
+<div class="ui center aligned stackable grid">
+  <div *ngIf="!showSearch">
+    <button class="ui submit large green button left floated" 
+      type="button"  
+      (click)="showSearch = !showSearch; reviews = []">
+      Noua Cautare
+    </button>
+  </div>
+</div>
+<div class="ui center aligned stackable grid">
+  <div class="search-form-container" *ngIf="showSearch">  
+    <form class="ui big form" #carForm="ngForm" (submit)="getFilteredReviews(carForm)" [class.loading]="loading">
+      <div class="fields">
+        <div class="six wide field">
+          <label>Marca*</label>
+          <div class="four fields">         
+              <select required class="ui dropdown" 
+                  name="make" 
+                  ngModel #make="ngModel" 
+                  (change)="onChange($event.target.value)">
+                <option value="0"></option>
+                <option *ngFor='let car of cars' value="{{car.make}}">{{car.make}}</option>
+              </select>   
+          </div>
+        </div>
+        <div class="six wide field">
+          <label>Model*</label>
+          <div class="four fields">       
+              <select required class="ui fluid dropdown" name="model" ngModel #model="ngModel">
+                <option value="0"></option>
+                <option *ngFor='let model of models' value="{{model}}">{{model}}</option>
+              </select>        
+          </div>
+        </div>
+      </div>
+      <button [disabled]="!carForm.form.valid" 
+          type="submit" 
+          class="ui submit large green button right floated" 
+          >Cauta</button>
+    </form>
+  </div>
+  <div class="ui container" *ngIf="reviews">
+    <div class="ui grid">
+      <div *ngIf="reviews.length<0">
+        <div>Nici o recenzie pentru acest model.</div>
+        <button
+          class="ui submit large green button left floated"
+          [routerLink]="['/new-review']">Adauga recenzie</button>
+      </div>
+      <app-review *ngFor="let review of reviews" [review]="review"></app-review>
     </div>
-    <app-review *ngFor="let review of reviews" [review]="review"></app-review>
   </div>
 </div>
