@@ -63,3 +63,69 @@
       </div>
     </div>
 </div>
+
+<!-- <div class="ui four column grid">
+    <div class="two wide column"></div>
+    <div class="details three wide column">
+      <div class="rating">
+        <star-rating-comp class="stars" [starType]="'svg'" 
+          [rating]="rev.rating" 
+          [readOnly]="true" 
+          [size]="'medium'">
+        </star-rating-comp>
+      </div>
+      <div><strong>Prima inmatriculare:</strong> {{rev.yearOfReg}}</div>
+      <div><strong>Versiune:</strong> {{rev?.version}}</div>
+      <div><strong>La cumparare: </strong>{{rev.stateAtPurchase}}</div>
+      <div><strong>Uz zilnic:</strong> {{rev.usage}}</div>
+      <div><strong>Utilizare:</strong> {{rev.avgMlg}}</div>
+      <div><strong>Proprietar de:</strong> {{rev.ownershipPeriod}}</div>
+      <div><strong>Recomand:</strong> 
+          <span *ngIf="rev.recommend"><i class="thumbs outline up icon blue"></i>Da</span>
+          <span><i class="thumbs outline down icon red" *ngIf="!rev.recommend"></i>Nu</span>
+          {{rev.recommend}}
+      </div>
+    </div>
+    <div class="seven wide column">
+      <div class="header">{{rev.name}} din {{rev.location}}</div>
+      <div class="content">
+        <div>{{rev.review}}</div>
+      </div>
+      <div class="probleme"><strong>Probleme comune:</strong></div>
+      <ul>
+        <li *ngIf="rev.commonProblems.frane">Frane</li>
+        <li *ngIf="rev.commonProblems.cutieViteze">Cutie viteze/ambreiaj</li>
+        <li *ngIf="rev.commonProblems.parteaElectrica">Partea Electrica</li>
+        <li *ngIf="rev.commonProblems.suspensie">Suspensie</li>
+        <li *ngIf="rev.commonProblems.motor">Motor</li>
+        <li *ngIf="rev.commonProblems.directie">Directie </li>
+      </ul>
+      <div class="additional information">Fiabilitate</div>
+      <div class="content">{{rev.fiabilitateText}}</div>
+      <div class="rating">
+        <star-rating-comp class="stars" [starType]="'svg'" 
+          [rating]="rev.fiabilitate" 
+          [readOnly]="true" 
+          [size]="'medium'">
+        </star-rating-comp>
+      </div>
+      <div class="additional information">Performanta</div>
+      <div class="content">{{rev.performantaText}}</div>
+      <div class="rating two wide column">
+        <star-rating-comp class="stars" [starType]="'svg'" 
+          [rating]="rev.performanta" 
+          [readOnly]="true" 
+          [size]="'medium'">
+        </star-rating-comp>
+      </div>
+      <div class="additional information">Costuri</div>
+      <div class="content">{{rev.costuriText}}</div>
+      <div class="rating">
+        <star-rating-comp class="stars" [starType]="'svg'" 
+          [rating]="rev.costuri" 
+          [readOnly]="true" 
+          [size]="'medium'">
+        </star-rating-comp>
+      </div>
+    </div>
+</div> -->

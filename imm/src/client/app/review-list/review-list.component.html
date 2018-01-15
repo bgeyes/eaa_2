@@ -1,4 +1,10 @@
-<!-- <app-home (searchFilterEvent)="getFilteredReviews($event)"></app-home> -->
+<div *ngIf="!showSearch">
+  <button class="ui submit large green button left floated" 
+    type="button"  
+    (click)="showSearch = !showSearch; reviews = []">
+    Noua Cautare
+  </button>
+</div>
 <div class="search-form-container" *ngIf="showSearch">  
   <form class="ui big form" #carForm="ngForm" (submit)="getFilteredReviews(carForm)" [class.loading]="loading">
     <div class="fields">
@@ -30,12 +36,6 @@
         >Cauta</button>
   </form>
 </div>
-<button class="ui submit large green button left floated" 
-    type="button" 
-    *ngIf="!showSearch" 
-    (click)="showSearch = !showSearch; reviews = []">
-    Noua Cautare
-</button>
 <div class="ui container" *ngIf="reviews">
   <div class="ui grid">
     <div *ngIf="reviews.length<0">
@@ -43,7 +43,7 @@
       <button
         class="ui submit large green button left floated"
         [routerLink]="['/new-review']">Adauga recenzie</button>
-  </div>
+    </div>
     <app-review *ngFor="let review of reviews" [review]="review"></app-review>
   </div>
 </div>
