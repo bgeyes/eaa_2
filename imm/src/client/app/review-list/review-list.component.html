@@ -17,7 +17,7 @@
   </div>
 </div>
 
-  <div class="search-form-container">  
+  <div class="search-form-container" *ngIf="showSearch">  
     <form class="ui big form" #carForm="ngForm" (submit)="getFilteredReviews(carForm)" [class.loading]="loading">
       <div class="sixteen fields">
         <div class="eight wide field">
@@ -47,7 +47,9 @@
           class="ui submit large green button right floated" 
           >Cauta</button>
     </form>
- 
+  </div>
+
+<div> 
   <div class="ui container" *ngIf="reviews">
     <div class="ui grid">
       <div *ngIf="reviews.length<0">
