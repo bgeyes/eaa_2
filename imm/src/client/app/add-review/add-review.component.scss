@@ -2,6 +2,7 @@
     max-width: 960px;
     margin: 50px auto;
     margin-bottom: 100px;
+    padding: 15px;
   }
 
 .lpk {
@@ -15,15 +16,17 @@ star-rating-comp {
 }
 
 .ui.segment {
+  width: 100%;
   border: 0px solid #fff;
 }
 
 .item {
-  margin: 50px auto;
+  
   background-color: #FFE1B6;
 }
 
 .item p {
+  margin: 20px auto;
   font-size: 40px;
 }
 

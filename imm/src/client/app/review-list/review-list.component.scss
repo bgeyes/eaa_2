@@ -8,15 +8,25 @@
   height: 300px;
 }
 
-.item {
-  height: 300px;
-  margin: 150px auto;
-  background-color: #FFE1B6;
+.item1 {
+  margin: 50px auto;
+  background-color: #D6E4F0;
 }
 
-.item p {
-  margin-top: 100px;
+.item1 p {
+  margin: 50px auto;
   font-size: 40px;
+  //transform: skewY(-10deg);
+}
+
+.item2 {
+  margin: 50px auto;
+  //background-color: #FFE1B6;
+}
+
+.item2 p {
+  font-size: 40px;
+  margin: 50px auto;
   //transform: skewY(-10deg);
 }
 
