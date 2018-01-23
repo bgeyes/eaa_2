@@ -33,27 +33,27 @@
         <li *ngIf="review.commonProblems.motor">Motor</li>
         <li *ngIf="review.commonProblems.directie">Directie </li>
       </ul>
-      <div class="additional information">Fiabilitate</div>
-      <div class="content">{{review.fiabilitateText}}</div>
-      <div class="rating">
+      <div class="additional information" *ngIf="review.fiabilitateText">Fiabilitate</div>
+      <div class="content" *ngIf="review.fiabilitateText">{{review.fiabilitateText}}</div>
+      <div class="rating" *ngIf="review.fiabilitate">
         <star-rating-comp class="stars" [starType]="'svg'" 
           [rating]="review.fiabilitate" 
           [readOnly]="true" 
           [size]="'medium'">
         </star-rating-comp>
       </div>
-      <div class="additional information">Performanta</div>
-      <div class="content">{{review.performantaText}}</div>
-      <div class="rating two wide column">
+      <div class="additional information" *ngIf="review.performantaText">Performanta</div>
+      <div class="content" *ngIf="review.performantaText">{{review.performantaText}}</div>
+      <div class="rating two wide column" *ngIf="review.performanta">
         <star-rating-comp class="stars" [starType]="'svg'" 
           [rating]="review.performanta" 
           [readOnly]="true" 
           [size]="'medium'">
         </star-rating-comp>
       </div>
-      <div class="additional information">Costuri</div>
-      <div class="content">{{review.costuriText}}</div>
-      <div class="rating">
+      <div class="additional information" *ngIf="review.costuriText">Costuri</div>
+      <div class="content" *ngIf="review.costuriText">{{review.costuriText}}</div>
+      <div class="rating" *ngIf="review.costuri">
         <star-rating-comp class="stars" [starType]="'svg'" 
           [rating]="review.costuri" 
           [readOnly]="true" 

@@ -21,6 +21,8 @@ export class ReviewListComponent implements OnInit {
   models: String[];
   reviews: Review[];
   car: Car;
+  modelHeader: any;
+  makeHeader: any;
 
   constructor(public api: ApiService) { }
 
@@ -41,7 +43,10 @@ export class ReviewListComponent implements OnInit {
       .subscribe(data => {
         form.reset();
         this.showSearch = false;
-        this.reviews = data});
+        this.reviews = data;
+        console.log(this.reviews[0].make);
+        this.modelHeader = this.reviews[0].model;
+        this.makeHeader = this.reviews[0].make;});
   }
 
   onChange(make) {
