@@ -29,8 +29,8 @@ export class ApiService {
       return this.request(url, RequestMethod.Post, body);
   }
 
-  delete(url: string) {
-      return this.request(url, RequestMethod.Delete);
+  delete(url: string, body: Object) {
+      return this.request(url, RequestMethod.Delete, body);
 }
 
   put(url: string, body: Object) {

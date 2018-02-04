@@ -2,7 +2,7 @@
   <div class="stretched row" style="padding: 0px;">
     
       <div class="ui segment item center aligned">
-        <p>Adauga o recenzie</p>
+        <p>Adauga recenzie</p>
       </div>
     
   </div>
@@ -23,7 +23,7 @@
     <div class="fields">
       <div class="six wide field">
         <label>Marca*</label>
-        <div class="four fields">         
+        <div class="four fields" style="padding:  10px;">         
             <select required class="ui dropdown" name="make" ngModel #make="ngModel" (change)="onChange($event.target.value)">
               <option value="0"></option>
               <option *ngFor='let car of cars' value="{{car.make}}">{{car.make}}</option>
@@ -32,7 +32,7 @@
       </div>
       <div class="six wide field">
         <label>Model*</label>
-        <div class="four fields">       
+        <div class="four fields" style="padding:  10px;">       
             <select required class="ui fluid dropdown" name="model" ngModel #model="ngModel">
               <option value="0"></option>
               <option *ngFor='let model of models' value="{{model}}">{{model}}</option>
@@ -61,7 +61,7 @@
     <div class="fields">
         <div class="six wide field">
             <label>Detin masina de*</label>      
-              <div class="five fields">
+              <div class="five fields" style="padding:  10px;">
                 <select class="ui fluid search dropdown" required name="ownershipPeriod" ngModel>
                   <option value=""></option>
                   <option value="mai putin de un an">mai putin de un an</option>
@@ -73,7 +73,7 @@
         </div>
         <div class="four wide field">
             <label>Starea la cumparare*</label>
-            <div class="three fields">
+            <div class="three fields" style="padding:  10px;">
                 <select class="ui fluid search dropdown" required name="stateAtPurchase" ngModel>
                   <option value=""></option>
                   <option value="Nou">Nou</option>

@@ -1,3 +1,4 @@
+import { ReviewListApprovalComponent } from './review-list-approval/review-list-approval.component';
 import { ReviewListComponent } from './review-list/review-list.component';
 import { AddReviewComponent } from './add-review/add-review.component';
 import { NgModule } from '@angular/core';
@@ -22,6 +23,11 @@ const routes: Routes = [
   {
     path: 'reviews',
     component: ReviewListComponent,
+    //canActivate: [AuthGuard]
+  },
+  {
+    path: 'approvals',
+    component: ReviewListApprovalComponent,
     //canActivate: [AuthGuard]
   },
   {

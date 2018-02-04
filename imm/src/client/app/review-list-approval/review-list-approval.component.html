@@ -1,0 +1,21 @@
+<div class="ui two equal height column stackable grid top">
+  <!-- <div class="stretched row" style="padding: 0px;"> -->
+    <div class="twelve wide column right aligned header">
+      <div class="item1">
+        <p>Aproba recenzii</p>
+      </div>
+    </div>
+    <div class="four wide column center aligned" style="padding: 0px;">
+        <div class="ui segment">
+          <img class="ui fluid image" src="profiles/cautarecenzieheader.jpg" alt="cautarecenzieheader">
+        </div>
+    </div>
+  <!-- </div> -->
+</div>
+<div> 
+  <div class="ui container">
+    <div class="ui grid">
+      <app-review-approval *ngFor="let review of reviews" [review]="review"></app-review-approval>
+    </div>
+  </div>
+</div>

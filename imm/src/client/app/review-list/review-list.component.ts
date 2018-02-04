@@ -1,9 +1,7 @@
-import { HomeComponent } from './../home/home.component';
 import { Car } from './../shared/car.model';
 import { Review } from './../shared/review.model';
 import { ApiService } from './../shared/api.service';
 import { Component, OnInit } from '@angular/core';
-import { ViewChild } from '@angular/core/src/metadata/di';
 import { NgForm } from '@angular/forms';
 
 @Component({
@@ -12,8 +10,6 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./review-list.component.scss']
 })
 export class ReviewListComponent implements OnInit {
-
-  //@ViewChild(HomeComponent) homeComponent: HomeComponent;
   
   loading: Boolean = false;
   showSearch: Boolean = true;

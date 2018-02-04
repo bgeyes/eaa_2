@@ -16,10 +16,11 @@
 }
 
 .item1 p {
-  margin: 50px auto;
-  font-size: 40px;
+  margin: 15px auto;
+  font-size: 35px;
   //transform: skewY(-10deg);
   border: 1px solid #D6E4F0;
+  font-family: "Anton", "sans-serif";
 }
 
 .ui.top {
@@ -34,6 +35,12 @@
 
 .ui.new-search-button {
   margin: 20px;
+  //box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.ui.new-search-button:hover {
+  //margin: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .button {

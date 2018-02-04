@@ -136,7 +136,7 @@ export class AddReviewComponent implements OnInit {
       costuriText: formValues.costuri
     };
     
-    this.api.post('reviews', review)
+    this.api.post('approvals', review)
       .subscribe(data => {
         form.reset();
         this.loading = false;

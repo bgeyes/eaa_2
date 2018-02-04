@@ -26,6 +26,56 @@ function apiRouter(database) {
 
   });
 
+  router.get('/approvals', (req, res) => {
+
+    const contactsCollection = database.collection('approvals');
+
+    contactsCollection.find({}).toArray((err, docs) => {
+      return res.json(docs)
+    });
+
+  });
+
+  router.post('/approvals', (req, res) => {
+    const review = req.body;
+
+    const reviewsCollection = database.collection('approvals');
+
+    reviewsCollection.insertOne(review, (err, r) => {
+      if (err) {
+        return res.status(500).json({ error: 'Error inserting new record.' })
+      }
+
+      const newRecord = r.ops[0];
+
+      return res.status(201).json(newRecord);
+    });
+  });
+
+  router.delete('/approvals', (req, res) => {
+    const review = req.body;
+
+    const query = { id: review.id };
+
+    console.log(query);
+
+    const reviewsCollection = database.collection('approvals');
+
+    reviewsCollection.deleteOne(query, (err, r) => {
+      if (err) {
+        /* return res.status(500).json({ error: 'Error deleting the record.' }) */
+        throw err;
+      }
+
+      //const deletedReview = r.ops[0];
+
+      console.log("1 deleted record");
+
+      //return res.status(201).json(r);
+    });
+  });
+
+
   router.post('/contacts', (req, res) => {
     const user = req.body;
 

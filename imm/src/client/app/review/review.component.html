@@ -15,8 +15,7 @@
       <div><strong>Proprietar de:</strong> {{review.ownershipPeriod}}</div>
       <div><strong>Recomand:</strong> 
           <span *ngIf="review.recommend"><i class="thumbs outline up icon blue"></i>Da</span>
-          <span><i class="thumbs outline down icon red" *ngIf="!review.recommend"></i>Nu</span>
-          {{review.recommend}}
+          <span *ngIf="!review.recommend"><i class="thumbs outline down icon red"></i>Nu</span>
       </div>
     </div>
     <div class="eleven wide column">
@@ -33,7 +32,7 @@
         <li *ngIf="review.commonProblems.motor">Motor</li>
         <li *ngIf="review.commonProblems.directie">Directie </li>
       </ul>
-      <div class="additional information" *ngIf="review.fiabilitateText">Fiabilitate</div>
+      <div class="additional information" *ngIf="review.fiabilitateText || review.fiabilitate">Fiabilitate</div>
       <div class="content" *ngIf="review.fiabilitateText">{{review.fiabilitateText}}</div>
       <div class="rating" *ngIf="review.fiabilitate">
         <star-rating-comp class="stars" [starType]="'svg'" 
@@ -42,7 +41,7 @@
           [size]="'medium'">
         </star-rating-comp>
       </div>
-      <div class="additional information" *ngIf="review.performantaText">Performanta</div>
+      <div class="additional information" *ngIf="review.performantaText || review.performanta">Performanta</div>
       <div class="content" *ngIf="review.performantaText">{{review.performantaText}}</div>
       <div class="rating two wide column" *ngIf="review.performanta">
         <star-rating-comp class="stars" [starType]="'svg'" 
@@ -51,7 +50,7 @@
           [size]="'medium'">
         </star-rating-comp>
       </div>
-      <div class="additional information" *ngIf="review.costuriText">Costuri</div>
+      <div class="additional information" *ngIf="review.costuriText || review.costuri">Costuri</div>
       <div class="content" *ngIf="review.costuriText">{{review.costuriText}}</div>
       <div class="rating" *ngIf="review.costuri">
         <star-rating-comp class="stars" [starType]="'svg'" 

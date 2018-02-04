@@ -1,0 +1,75 @@
+<div class="ui four column grid">
+  <div class="details five wide column">
+    <div class="rating">
+      <star-rating-comp class="stars" [starType]="'svg'" 
+        [rating]="review.rating" 
+        [readOnly]="true" 
+        [size]="'medium'">
+      </star-rating-comp>
+    </div>
+    <div><strong>Prima inmatriculare:</strong> {{review.yearOfReg}}</div>
+    <div><strong>Versiune:</strong> {{review?.version}}</div>
+    <div><strong>La cumparare: </strong>{{review.stateAtPurchase}}</div>
+    <div><strong>Uz zilnic:</strong> {{review.usage}}</div>
+    <div><strong>Utilizare:</strong> {{review.avgMlg}}</div>
+    <div><strong>Proprietar de:</strong> {{review.ownershipPeriod}}</div>
+    <div><strong>Recomand:</strong> 
+        <span *ngIf="review.recommend"><i class="thumbs outline up icon blue"></i>Da</span>
+        <span *ngIf="!review.recommend"><i class="thumbs outline down icon red"></i>Nu</span>
+    </div>
+  </div>
+  <div class="eleven wide column">
+    <div class="header">{{review.name}} din {{review.location}}</div>
+    <div class="content">
+      <div>{{review.review}}</div>
+    </div>
+    <div class="probleme"><strong>Probleme comune:</strong></div>
+    <ul>
+      <li *ngIf="review.commonProblems.frane">Frane</li>
+      <li *ngIf="review.commonProblems.cutieViteze">Cutie viteze/ambreiaj</li>
+      <li *ngIf="review.commonProblems.parteaElectrica">Partea Electrica</li>
+      <li *ngIf="review.commonProblems.suspensie">Suspensie</li>
+      <li *ngIf="review.commonProblems.motor">Motor</li>
+      <li *ngIf="review.commonProblems.directie">Directie </li>
+    </ul>
+    <div class="additional information" *ngIf="review.fiabilitateText || review.fiabilitate">Fiabilitate</div>
+    <div class="content" *ngIf="review.fiabilitateText">{{review.fiabilitateText}}</div>
+    <div class="rating" *ngIf="review.fiabilitate">
+      <star-rating-comp class="stars" [starType]="'svg'" 
+        [rating]="review.fiabilitate" 
+        [readOnly]="true" 
+        [size]="'medium'">
+      </star-rating-comp>
+    </div>
+    <div class="additional information" *ngIf="review.performantaText || review.performanta">Performanta</div>
+    <div class="content" *ngIf="review.performantaText">{{review.performantaText}}</div>
+    <div class="rating two wide column" *ngIf="review.performanta">
+      <star-rating-comp class="stars" [starType]="'svg'" 
+        [rating]="review.performanta" 
+        [readOnly]="true" 
+        [size]="'medium'">
+      </star-rating-comp>
+    </div>
+    <div class="additional information" *ngIf="review.costuriText || review.costuri">Costuri</div>
+    <div class="content" *ngIf="review.costuriText">{{review.costuriText}}</div>
+    <div class="rating" *ngIf="review.costuri">
+      <star-rating-comp class="stars" [starType]="'svg'" 
+        [rating]="review.costuri" 
+        [readOnly]="true" 
+        [size]="'medium'">
+      </star-rating-comp>
+    </div>
+  </div>
+  <div class="eleven wide column">
+    <button 
+          (click)="aproba()"
+          type="submit" 
+          class="ui submit large green button left floated" 
+          >Aproba</button>
+    <button 
+          (click)="sterge()"
+          type="submit" 
+          class="ui submit large red button left floated" 
+          >Sterge</button>
+  </div>
+</div>

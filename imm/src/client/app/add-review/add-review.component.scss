@@ -20,14 +20,18 @@ star-rating-comp {
   border: 0px solid #fff;
 }
 
+.ui.dropdown {
+  padding: 5px;
+}
+
 .item {
-  
-  background-color: #FFE1B6;
+  background-color: #259F6C;
 }
 
 .item p {
-  margin: 20px auto;
-  font-size: 40px;
+  margin: 15px auto;
+  font-size: 35px;
+  font-family: "Anton", "sans-serif";
 }
 
 .buttons {
